@@ -41,12 +41,13 @@
             height: 162px;
             border: 1px solid #222222; /*边框线粗细 实线 颜色*/
             /*border: 1px dotted #222222*/;
+            cursor: pointer
         }
         
         #wrap ul li img {
             display: block; /*成块元素显示以结构性*/
-            width: 288px;
-            height: 162px;
+            width: 100%;
+            height: 100%;
         }
 
         #wrap .console {
@@ -64,6 +65,7 @@
             width: 45px;
             height: 45px;
             background: url("imges/console.png") no-repeat;
+            cursor: pointer;
             /*background-repeat: no-repeat;*/ /*禁止背景图片平铺*/
         }
 
@@ -128,4 +130,49 @@
 
     </div>
 </body>
+<script src="js/jQuery.js"> <!--javascript 1.方法 属性 事件--></script>
+<script>
+    var $li = $('#wrap ul li'); //获取li标签集合
+    var length = $li.length; //获取li长度
+    var $next = $('.next'); //获取下一张按钮
+    var $prev = $('.prev'); //获取上一张按钮
+    var $grid = $('.grid');
+    var index = 0; //初始化被选择的下标 从零开始数数
+
+    $li.click(function(){
+        // alert($(this).index());
+        index = $(this).index(); //获取当前点击li的下标
+        $li.each(function(ix){ //让所有li按序做一件事
+            $(this).delay(ix*30).fadeOut(30);
+        });
+        play()
+    });
+
+    $next.click(function(){
+        index++;
+        index = index%length;
+        play()
+    });
+
+    $prev.click(function(){
+        index--;
+        index = (index+length)%length
+        play()
+    });
+
+    $grid.click(function(){
+        location.reload()
+    });
+
+    function play(){ //函数封装
+        $li.eq(index).fadeIn(300).animate({  //eq指定下标
+            width: "90%",
+            height: "90%"
+        },300).siblings('li').css({
+            width: '288px',
+            height: '162px'
+        }).fadeOut(300);
+    }
+</script>
+
 </html>
