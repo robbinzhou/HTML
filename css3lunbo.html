@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3实现轮播,code by robbin</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: url("imges/background.jpg");
+    }
+
+    #content {
+        width: 900px;
+        height: 600px;
+        margin: 100px auto;
+    }
+    .billboard-outer {
+        width: 900px;
+        height: 600px;
+        background-image: url("imges/billboard.png");
+    }
+    .billboard {
+        padding: 21px 0px 0px 62px;
+    }
+    .billboard li {
+        width: 36px;
+        height: 365px;
+        list-style-type: none;
+        float: left; /*让元素从左到右显示*/
+
+    .billboard li div {
+        width: 36px;
+        height: 365px;
+    }
+    .billboard li div:nth-child(1) {
+        background-image: url("imges/cocktail.png");
+    }
+</style>
+<body>
+    <div id="content"> <!--不能以数字开头命名-->
+        <div class="billboard-outer">
+            <ul class="billboard">
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+                <li><div></div><div></div><div></div></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
